@@ -1,5 +1,27 @@
 import "./App.css";
+import { KeyCap } from "./components/KeyCap";
 import { Siderbar } from "./components/Sidebar";
+
+const KEYSOUNDS = [
+  {
+    id: 1,
+    name: 'Cherry MX Blue',
+    description: '',
+    color: 'blue'
+  },
+  {
+    id: 2,
+    name: 'Greenberry MX',
+    description: '',
+    color: 'green'
+  },
+  {
+    id: 3,
+    name: 'Cream RVRB',
+    description: '',
+    color: 'pink'
+  },
+]
 
 function App() {
   return (
@@ -14,13 +36,14 @@ function App() {
 
             <div className="grid">
               {
-                Array.from({ length: 5 }).fill(5).map((_, i) => (
+                KEYSOUNDS.map((sound, i) => (
                   <div className="card" key={i}>
-                    <div className="body">
-                      <h2>Cherry MX Blue</h2>
-                      <p>400 coins</p>
-                      <button className="button">Usar</button>
+                    <div className="icon">
+                      <KeyCap color={sound.color} />
                     </div>
+                    <h2>{sound.name}</h2>
+                    <p>{sound.description}</p>
+                    <button className="button">Usar</button>
                   </div>
                 ))
               }

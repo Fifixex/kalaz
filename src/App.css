@@ -148,33 +148,64 @@ body {
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  max-width: 330px;
+  background: var(--color-background-card);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-card);
   width: 100%;
-  height: 210px;
-  gap: 20px;
-  border-radius: 16px;
-  background: linear-gradient(145deg, #121217, #0a0a0e);
-  border: 1px solid #1f1f24;
-  box-shadow:
-    0 4px 10px rgba(0, 0, 0, 0.3),
-    0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  max-width: 330px;
+  text-align: center;
+  gap: var(--spacing-xs);
 }
 
 .card:hover {
   filter: brightness(1.05);
-  background: linear-gradient(145deg, #1a1a20, #101014);
-  box-shadow:
-    0 6px 20px rgba(0, 0, 0, 0.5),
-    0 4px 8px rgba(0, 0, 0, 0.3);
+  background: var(--color-background-card-hover);
+  box-shadow: var(--shadow-card-hover)
 }
 
 .card > .button {
   margin-top: 10px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #b0b0b0;
+  margin: 0;
+}
+
+.card .button {
+  margin-top: 8px;
+  padding: 10px 20px;
+  background-color: #84ff8a;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #0f0f0f;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.25s;
+}
+
+.card .button:hover {
+  background-color: #59da60;
+}
+
+.card .button:active {
+  background-color: #40a845;
 }
 
 .button {
@@ -395,4 +426,46 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+.key {
+  --kc-base: var(--color-background-primary);
+  border-top-color: color-mix(in srgb, var(--kc-base) 100%, white 20%);
+  border-left-color: var(--kc-base);
+  border-right-color: var(--kc-base);
+  border-bottom-color: color-mix(in srgb, var(--kc-base) 85%, var(--color-background-primary) 100%);
+
+  width: 40px;
+  height: 45px;
+  margin: 2px;
+  border-width: 3px 7px 10px;
+  border-style: solid;
+  border-radius: 4px;
+  float: left;
+  background: var(--kc-base);
+
+  filter:
+    brightness(1.3)
+    drop-shadow(0 0 4px var(--kc-base))
+    drop-shadow(0 0 12px var(--kc-base))
+    drop-shadow(0 0 32px color-mix(in srgb, var(--kc-base) 60%, black 40%));
+}
+
+.key:hover {
+  filter:
+    brightness(2.1)
+    hue-rotate(20deg)
+    drop-shadow(0 0 6px var(--kc-base))
+    drop-shadow(0 0 16px var(--kc-base))
+    drop-shadow(0 0 42px color-mix(in srgb, var(--kc-base) 60%, black 40%));
+}
+
+.keycap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  user-select: none;
 }
